@@ -25,9 +25,9 @@ At a high level, our RTL approach includes a handful of changes:
 
 - **Two new cheatsheet kitchen sink pages**—the [default cheatsheet](https://getbootstrap.com/docs/5.0/examples/cheatsheet/) for our standard CSS and the [RTL cheatsheet](https://getbootstrap.com/docs/5.0/examples/cheatsheet-rtl/).
 
-Our approach is built on [RTLCSS](https://rtlcss.com), an awesome project that helps reprocess an existing LTR stylesheet for RTL. We've classified it as an experimental feature for now, anticipating that we'll get some of this wrong. We're looking to the community to help us round out the feature as we wrap up some remaining todos.
+Our approach is built on [RTLCSS](https://rtlcss.com/), an awesome project that helps reprocess an existing LTR stylesheet for RTL. We've classified it as an experimental feature for now, anticipating that we'll get some of this wrong. We're looking to the community to help us round out the feature as we wrap up some remaining todos.
 
-The RTL pull request has some outstanding todos already planned for our team to address. If you see something else we can improve upon, please consider opening an issue or pull request.
+[This issue](https://github.com/twbs/bootstrap/issues/32330) has some outstanding todos already planned for our team to address. If you see something else we can improve upon, please consider opening an issue or pull request.
 
 [Read up on RTL in Bootstrap in our docs](https://getbootstrap.com/docs/5.0/getting-started/rtl/), including required HTML changes, a starter template, details on our approach, and more.
 
@@ -65,7 +65,7 @@ Making this change is a tad annoying, but easy enough to remedy with a find and 
 
 ## New toast positioning
 
-After dabbling in some JavaScript solutions to [positioning toasts](docs/5.0/components/toasts/#placement), we've landed on a new CSS-only approach thanks to our new positioning utilities. This comes with some breaking changes—namely some changes to `width` and toggle styles—but largely keeps toasts intact.
+After dabbling in some JavaScript solutions to [positioning toasts](https://getbootstrap.com/docs/5.0/components/toasts/#placement), we've landed on a new CSS-only approach thanks to our new positioning utilities. This comes with some breaking changes—namely some changes to `width` and toggle styles—but largely keeps toasts intact.
 
 [See the pull request for more details.](https://github.com/twbs/bootstrap/pull/32280/)
 
@@ -74,7 +74,6 @@ After dabbling in some JavaScript solutions to [positioning toasts](docs/5.0/com
 Beyond the namespacing, we've been chipping away at a few other JavaScript improvements and bug fixes. Here's a rundown of what's new:
 
 - Created a new base component to share logic across our components. [See #29370.](https://github.com/twbs/bootstrap/pull/29370)
-- De-duplicated `_fixTitle()` in our tooltips. [See #32124.](https://github.com/twbs/bootstrap/pull/32124)
 - Migrate to more modern APIs across our plugins. [See #32095.](https://github.com/twbs/bootstrap/pull/32095)
 - Tooltips and popovers can now have custom classes. [See #32217.](https://github.com/twbs/bootstrap/pull/32217)
 - Don't hide modal when `config.keyboard` is false. [See #32179.](https://github.com/twbs/bootstrap/pull/32179)
@@ -136,7 +135,7 @@ For a more complete list of of changes, checkout the [v5 Beta project board](htt
 
 ## Get started
 
-**Head to <https://v5.getbootstrap.com> to explore the new release.** We've also published this updated as a pre-release to npm, so if you're feeling bold or are curious about what's new, you can pull the latest in that way.
+**Head to <https://getbootstrap.com> to explore the new release.** We've also published this updated as a pre-release to npm, so if you're feeling bold or are curious about what's new, you can pull the latest in that way.
 
 ```sh
 npm i bootstrap@next
