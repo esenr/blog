@@ -11,7 +11,7 @@ There are some really awesome new features—RTL!—that have been added in this
 
 ## RTL
 
-![]()
+![Bootstrap RTL docs](/assets/img/2020/12/rtl-docs.png)
 
 Our biggest addition to the project in years, we've finally added RTL support to Bootstrap! Please join me in giving @ffoodd—one of our newest contributors and author of the RTL pull request—a massive thank you. [The RTL pull request](https://github.com/twbs/bootstrap/pull/30980) includes nearly 50 cross-references to existing issues and PRs that have tried to implement the feature into our core.
 
@@ -33,22 +33,28 @@ Our approach is built on [RTLCSS](https://rtlcss.com/), an awesome project that 
 
 ## Renamed classes for logical properties
 
-Part of our approach to adding RTL to Bootstrap was to do so in a way that felt future-friendly to ourselves and the web at large. As such, we've embraced the spirit of CSS logical properties in some class names. It's a risky change because of the size and impact of the change, but we hope you'll appreciate it.
+Part of our approach to adding RTL to Bootstrap was to add it in a way that felt future-friendly to ourselves and the web at large. As such, we've embraced the spirit of CSS logical properties and **have renamed several classes and variables**. It's a risky change because of the size and impact of the change, but we hope you'll appreciate it overall!
 
-Most of you have already interacted with logical properties thanks to our flex utilities—they replace direction properties like `left` and `right` in favor `start` and `end`. This makes the class names and values appropriate for LTR and RTL without any additional overhead.
+Most of you have already interacted with logical properties thanks to our flex utilities—they replace direction properties like `left` and `right` in favor `start` and `end`. Things like `align-items-end` have been welcomed additions. This makes horizontal directional class names appropriate for LTR and RTL without any additional overhead moving forward.
 
-For example, in a LTR context, instead of `.ml-3` for `margin-left`, use `.ms-3`.
+For example, in a LTR context, instead of `.ml-3` for `margin-left`, use `.ms-3`. Be sure to [read the RTL Migration guide](https://getbootstrap.com/docs/5.0/migration/#rtl) for a full list of renamed classes and variables.
 
 ## Popper.js v2
 
-...
+![Popper.js](/assets/img/2020/12/popper-header.png)
+
+We've upgraded [Popper.js](https://popper.js.org) from v1.x to v2.x, bringing with it some small breaking changes to our tooltips and popovers. These two changes are why we haven't been able to update to v2.x sooner.
+
+- Removed `offset` option from our Tooltip/Popover and Dropdown plugins; this can still be achieved using the `popperConfig` parameter.
+- The `fallbackPlacement` option has become `fallbackPlacements`.
+
+Popper.js v2 also comes with a smaller file size for our primary dependency, updated positioning calculations, and much more.
 
 ## Namespaced data attributes
 
 We've renamed all our `data` attributes to include `bs` as an infix, thereby namespacing all the HTML attributes that enable JavaScript behaviors from our plugins. [See #31827](https://github.com/twbs/bootstrap/pull/31827) for details.
 
 Making this change is a tad annoying, but easy enough to remedy with a find and replace. The new attributes work just like the old ones, just a little more specific. For example, here's a dropdown button and menu with the newly renamed `data-bs-toggle` attribute.
-
 
 ```html
 <div class="dropdown">
@@ -65,9 +71,11 @@ Making this change is a tad annoying, but easy enough to remedy with a find and 
 
 ## New toast positioning
 
-After dabbling in some JavaScript solutions to [positioning toasts](https://getbootstrap.com/docs/5.0/components/toasts/#placement), we've landed on a new CSS-only approach thanks to our new positioning utilities. This comes with some breaking changes—namely some changes to `width` and toggle styles—but largely keeps toasts intact.
+![Popper.js](/assets/img/2020/12/toast-position-docs.png)
 
-[See the pull request for more details.](https://github.com/twbs/bootstrap/pull/32280/)
+After dabbling in some JavaScript solutions to [positioning toasts](https://getbootstrap.com/docs/5.0/components/toasts/#placement), we've landed on a new CSS-only approach thanks to our [new positioning utilities](https://getbootstrap.com/docs/5.0/utilities/position/). This comes with some minor breaking changes—namely some changes to exact CSS properties and how we toggle visibility of the toasts—but largely keeps them intact.
+
+Our docs have been updated to include a [new position preview picker](https://getbootstrap.com/docs/5.0/components/toasts/#placement), too, so you can see them in action. [See the pull request for more details.](https://github.com/twbs/bootstrap/pull/32280/)
 
 ## JS enhancements
 
@@ -84,7 +92,7 @@ One of the biggest new features of Bootstrap 5 is our utilities API, an extensib
 
 Use the `state` option to generate pseudo-class variations. Example pseudo-classes are `:hover` and `:focus`. When a list of states are provided, classnames are created for that pseudo-class. For example, to change opacity on hover, add `state: hover` and you'll get `.opacity-hover:hover` in your compiled CSS.
 
-Need multiple pseudo-classes? Use a space-separated list of states: `state: hover focus`.
+Need multiple pseudo-classes? Use a space-separated list: `state: hover focus`.
 
 ```scss
 $utilities: (
