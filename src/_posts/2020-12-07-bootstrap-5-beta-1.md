@@ -2,7 +2,7 @@
 layout: post
 title: Bootstrap 5 Beta 1
 video: y2bVIBwpCTA
-date: 2020-12-04 11:00:00
+date: 2020-12-07 11:00:00
 ---
 
 With our first beta release of Bootstrap 5, we're calling it on new features and breaking changes. From here on out, we're fine-tuning the release on our march to a stable v5 release.
